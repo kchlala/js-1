@@ -1,0 +1,41 @@
+@media (max-width:992px) {
+    .car-1{
+        padding: 60px 0 60px 0px;
+        .listing-1{
+            width: 80%;
+            margin: auto;
+        }
+    }
+    .redcar-general{
+        width: 85%;
+        margin: auto;
+        .red-left{
+            width: 100%;
+            img{
+                width: 100%;
+            }
+            .icons-general{
+                .icons-32{
+                   padding: 0px 28px;
+                }
+            }
+        }
+        .quuts2{
+            width: 100%;
+            .bo1,.bo2,.bo3,.bo4,.bo5,.bo6{
+                width: 100%;
+            }
+          
+        }
+    }
+}
+
+@media(min-width:992px) and(max-width:1200px){
+    .redcar-general{
+        width: 85%;
+        margin: auto;
+        .red-left{
+            width: 65%;
+        }
+    }
+}

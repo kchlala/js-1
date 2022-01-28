@@ -1,63 +1,39 @@
-var bars = document.getElementsByClassName("bars")[0];
-var ham = document.querySelector(".ham");
-var listing = document.querySelector('.listing');
-var body =document.querySelector("body") ;
 
-function toggleNav() {
-    listing.classList.toggle('nav-active'); 
-    body.classList.toggle('hidebody') ;
-       
+$('.bo1 input').click(function() {
+  $(this).css({
+      'border-bottom': '1px solid #ff3837'   
+  });
+});
+
+const inputsearch = document.querySelector(".bo1 input")
+document.addEventListener("click", function(event) {
+  if (event.target.closest(".bo1 input")) return
+  inputsearch.style = "border-bottom: 1px solid #a7a7a7";
+})
+
+
+
+$('.lit').on('keyup ', function() {
+ 
+   if ($(this).val().length > 0 ) 
+   {
+    $(this).parent('.i1').find('.l1').addClass('l2');
+   }
+   else{
+    $(this).parent('.i1').find('.l1').removeClass('l2');
+   }
+ });
+
+
+$('body').click(function() {
+  $('.l1').css("color","#5c5c5c");
+});
+
+$('.lit').click(function(e){
+  e.stopPropagation();
+});
+
+function showOne(id) {
+  $('#' + id).css("color","#ff3837");
+  $('.l1').not('#' + id).css("color","#5c5c5c");
 }
-ham.addEventListener("click", function(){
-
-  if(bars.classList.contains("active")){
-    bars.classList.remove("active");
-  }
-  else{
-    bars.classList.add("active");
-  }
-  toggleNav() ;
-
-});
-
-
-$(function() {
-  $('.listing li').click(function() {
-    $(this).children('.drop-ul').slideToggle();
-
-    $(this).find( ".down" ).toggleClass( 'actived');
-    $(this).find( "#main-a" ).toggleClass( 'actived');
-
-    return false;
-  });
-});
-
-
-$(function() {
-  $('.drop-ul li').click(function() {
-    $(this).children('.drop-ul-2').slideToggle();
-    $(this).find('.right').toggleClass('actived');
-    $(this).find('#drop-a').toggleClass('actived'); 
-    return false;
-  });
-
-});
-
-
-$(document).ready(function(){
-
-  $('#searchbar-icon').click(function(){
-    $(".searchbox").show(1000);
-    $(".listing").hide(600);
-    $(".search").hide(600);
-    $(".quat").hide(600);
-  });
-
-  $('.cross').click(function(){
-    $(".searchbox").hide(600);
-    $(".listing").show(1000);
-    $(".search").show(1000);
-    $(".quat").show(1000);
-  });
-  
-});
